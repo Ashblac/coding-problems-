@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Function to generate only minutes and seconds (same as before)
+void generatetime(int *n2, int *n3){
+    // Seed the random number generator only once per program execution
+    static int seeded = 0;
+    if (!seeded) {
+        srand(time(NULL));
+        seeded = 1;
+    }
+   
+    *n2 = rand() % 60; // Minutes (0-59)
+    *n3 = rand() % 60; // Seconds (0-59)
+}
+
+int main() {
+    int n1 = 0, n2 = 0, n3 = 0;
+    char timeline_choice;
+
+    // 1. Get user input
+    printf("Select a timeline:\n");
+    printf("M or m - Morning (1 AM to 11 AM)\n");
+    printf("N or n - Noon/Day (12 PM to 4 PM)\n");
+    printf("A or a - Night (5 PM to 11 PM)\n");
+    printf("Enter M/m, N/n, or A/a: ");
+   
+    scanf(" %c", &timeline_choice);
+
+    // 2. Determine hours (n1) based on user input using OR conditions
+    switch(timeline_choice){
+        // Handle both lowercase 'm' and uppercase 'M'
+        case 'm':
+        case 'M':
+            // Morning (1 to 11) -> 11 numbers total
+            n1 = rand() % 11 + 1;
+            break;
+           
+        // Handle both lowercase 'n' and uppercase 'N'
+        case 'n':
+        case 'N':
+            // Noon/Day (12 to 16) -> 5 numbers total
+            n1 = rand() % 5 + 12;
+            break;
+           
+        // Handle both lowercase 'a' and uppercase 'A'
+        case 'a':
+        case 'A':
+            // Night (17 to 23) -> 7 numbers total
+            n1 = rand() % 7 + 17;
+            break;
+           
+        default:
+            printf("\nInvalid choice. Generating a random time for All 24 Hours.\n");
+            n1 = rand() % 24; // 0 to 23
+            break;
+    }
+
+    // 3. Generate minutes and seconds once
+    generatetime(&n2, &n3);
+   
+    // 4. Print the final time
+    printf("\n--- Result ---\n");
+    printf("The random time is: %02d:%02d:%02d\n", n1, n2, n3);
+   
+    return 0;
+}
