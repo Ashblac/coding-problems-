@@ -1,0 +1,24 @@
+#include <stdio.h>
+float convertyardtometer (int num, char t);
+int main() {
+    int num;
+    char t;
+    float result; 
+    printf("Enter the type you want to convert (y or m): ");
+    scanf(" %c", &t);
+    printf("Enter the number: ");
+    scanf(" %d", &num);
+    result=convertyardtometer (num, t);
+    printf("%.4f", result);
+    return 0;
+}
+float convertyardtometer (int num, char t){
+    float result=0.0;
+    if(t=='y'){
+        result = num * 0.9144;
+    }
+    else if(t=='m'){
+        result = num / 0.9144;
+    }
+    return result;
+}
