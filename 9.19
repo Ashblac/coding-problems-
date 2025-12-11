@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int generateop(int n1, int n2, char op);
+int generatenum(int n1, int n2, int digit);
+
+int main() {
+    
+    srand(time(NULL));
+    
+    char op;
+    int digit,n1,n2;
+    
+    printf("Enter the operator and the number of digits: ");
+    scanf(" %c %d",&op,&digit);
+    
+    if (scanf(" %c %d", &op, &digit) != 2 || (op != '+' && op != '-') || (digit < 1 || digit > 3)) {
+        printf("Invalid input. Please enter '+' or '-' followed by a digit (1-3).\n");
+        return 1;
+    }
+    
+    int generatenum(int n1, int n2, int digit);
+    generateop(n1, n2, op);
+
+    printf("your question: \n");
+    printf("%d",n1);
+    printf("%d",n2);
+    printf("  %c",op);
+    printf("_____");
+    printf("   ?   ");
+
+    return 0;
+}
+int generatenum(int n1, int n2, int digit){
+    
+    if(digit==1){
+        n1 = rand()%10;
+        n2 = rand()%10;
+    }
+    else if(digit==2){
+        n1 = rand()%90+10;
+        n2 = rand()%90+10;
+    }
+    else if(digit==3){
+        n1 = rand()%900+100;
+        n2 = rand()%900+100;
+    }
+}
+
+int generateop(int n1, int n2, char op){
+    int result;
+    if(op =='+'){
+        result=n1+n2;
+    }
+    else if (op == '-'){
+        if(n1>=n2){
+            result=n1-n2;
+        }
+        else{
+            result=n2-n1;
+        }
+    }
+    return result;
+}
