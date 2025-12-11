@@ -1,0 +1,25 @@
+#include<stdio.h>
+void function(int num){
+int i;
+int j;
+	for(i=1; i<=num; i++){
+		for(j=1 ;j<=i ;j++){	
+		printf("%d ",i);
+		}
+		printf("\n");
+	}
+}
+
+int main(){
+	int number;
+	printf("Enter number: ");
+	scanf("%d",&number);
+	while(number<=0){
+		printf("Error!! Please enter a positive number! ");
+		printf("\nEnter number: ");
+	    scanf("%d",&number);
+		}
+		function(number);
+	
+	return 0;
+	}
