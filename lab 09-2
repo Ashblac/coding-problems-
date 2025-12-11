@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<math.h>
+ 
+void printpassword(int N, int P);
+ 
+int main(){
+srand(time(NULL));
+printpassword(4,5);
+return 0;
+}
+ 
+void printpassword(int N, int P){
+int i=0;
+while(i<N){
+int j=0;
+while(j<P){
+int choice= rand()%7+1;
+switch(choice){
+case 1: 
+printf("Ma+");
+break;
+case 2: 
+printf("Ge*");
+break;
+case 3: 
+printf("!Se");
+break;
+case 4: 
+printf("E?s");
+break;
+case 5: 
+printf("A-s");
+break;
+case 6: 
+printf("A3n");
+break;
+case 7: 
+printf("E/m");
+break;
+}
+j++;
+}
+printf("\n");
+i++;
+}
+}
+ 
