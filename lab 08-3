@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+void writeColorMessage(int colorcode);
+
+int main(){
+	srand(time(NULL));
+	writeColorMessage(0);
+	writeColorMessage(2);
+	return 0;
+	
+}
+
+void writeColorMessage(int colorcode)
+{
+	int newcolor;
+	do{
+		newcolor= rand()%10;
+		printf("I did not like it at all!");
+	}
+	while(newcolor==colorcode);
+	
+	
+	if (newcolor==0) printf("black\n");
+	else if (newcolor==1) printf("brown\n");
+	else if (newcolor==2) printf("red\n");
+	else if (newcolor==3) printf("orange\n");
+	else if (newcolor==4) printf("yellow\n");
+	else if (newcolor==5) printf("green\n");
+	else if (newcolor==6) printf("blue\n");
+	else if (newcolor==7) printf("purple\n");
+	else if (newcolor==8) printf("gray\n");
+	else if (newcolor==9) printf("white\n");
+	
+
+}
