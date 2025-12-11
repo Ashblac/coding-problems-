@@ -1,0 +1,22 @@
+#include<stdio.h>
+ 
+int power(int A,int B){
+int c=1;
+for(int i=1; i<=B; i++){
+c=c*A;
+}
+return c;
+}
+ 
+int main(){
+ 
+int A, B;
+ 
+printf("Enter 2 integers (A and B): ");
+scanf("%d %d",&A,&B);
+printf("------------------------------------- \n");
+ 
+printf("%d to the power of %d = %d ", A,B, power(A, B));
+ 
+return 0;
+}
