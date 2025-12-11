@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<math.h>
+ 
+float function(char bodytype, float bodyweight){
+float boneweight;
+switch(bodytype){
+case 'a':
+case 'A':
+boneweight = (bodyweight*10)/100;
+break;
+case 'c':
+case 'C':
+boneweight = (bodyweight*7)/100;
+break;
+}
+return boneweight;
+}
+ 
+int main(){
+char bodytype;
+float bodyweight, boneweight;
+ 
+printf("Enter type (Adult-a/A, Children-c/C): ");
+scanf(" %c", &bodytype);
+ 
+printf("Enter body weight (kg): ");
+scanf("%f",&bodyweight);
+ 
+printf("\n---------------------------------------------------------------\n");
+function(bodytype,bodyweight);
+printf("Your bone weight = %.2f kg", function(bodytype,bodyweight));
+ 
+return 0;
+}
