@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void message(int daycode){
+    int otherday;
+    do{
+         otherday=rand()%7+1;
+    }while(daycode==otherday);
+    
+    switch(otherday){
+        case 1:
+        printf("Sunday");
+        break;
+        case 2:
+        printf("Monday");
+        break;
+        case 3:
+        printf("Tuesday");
+        break;
+        case 4:
+        printf("Wednesday");
+        break;
+        case 5:
+        printf("Thursday");
+        break;
+        case 6:
+        printf("Friday");
+        break;
+        case 7:
+        printf("Saturday");
+        break;
+        default:
+        break;
+        
+    }
+}
+
+int main() {
+    
+    int otherday;
+    int daycode;
+    
+    srand(time(NULL));
+
+    printf("The day will be "); 
+    message(daycode);
+    printf(".\n");
+
+    return 0;
+}
