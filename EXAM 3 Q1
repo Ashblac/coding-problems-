@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+float sugarlimit(char age, int weight);
+
+int main() {
+    char age;
+    int weight;
+    int g;
+    float result=0.00;
+    
+    printf("Enter age group(Child: c/C, Adult: a/A): ");
+    scanf(" %c",&age);
+    printf("Enter your weight(kg): ");
+    scanf(" %d",&weight);
+    printf("--------------------------\n");
+    result = sugarlimit(age, weight);
+    g=result*100;
+    printf("Your maximum daily sugar limit = %.3f kg = %d g", result, g);
+
+    return 0;
+}
+
+float sugarlimit(char age, int weight){
+    float maxsugar;
+    if(age=='c'||age=='A'){
+        maxsugar=(weight*1.5)/100;
+    }
+    else if(age=='a'||age=='A'){
+        maxsugar=(weight*1)/100;
+    }
+    return maxsugar;
+}
