@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    float array_a[6];
+    float array_b[6];
+    float array_c[12];
+    int i;
+    
+    printf("Enter elemnts for array c: ");
+    for(i=0;i<12;i++){
+        scanf("%f",&array_c[i]);
+    }
+    
+    for(i=0;i<6;i++){
+        array_a[i]=array_c[2*i];
+        array_b[i]=array_c[2*i+1];
+    }
+    printf("Elements of array a are: ");
+    for(i=0;i<6;i++){
+        printf("%.1f ", array_a[i]);
+    }
+    
+    printf("\nElements of array b are: ");
+    for(i=0;i<6;i++){
+        printf("%.1f ", array_b[i]);
+    }
+   
+    return 0;
+}
+
+Enter elemnts for array c: 4.1 8.2 7.1 0.2 9.1 5.2 6.1 3.2 1.1 4.2 0.1 5.2 
+
+Elements of array a are: 4.1 7.1 9.1 6.1 1.1 0.1 
+Elements of array b are: 8.2 0.2 5.2 3.2 4.2 5.2 
+
