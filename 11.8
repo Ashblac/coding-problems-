@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    float numc[10];
+    float numa[5];
+    float numb[5];
+    int cntc=0;
+    float suma=0.0;
+    float sumb=0.0;
+    float avg=0.0;
+    printf("Enter 10 elements for the array a: ");
+    for(int i=0;i<5;i++){
+        scanf("%f",&numa[i]);
+        suma+=numa[i];
+    }
+    printf("Enter 10 elements for the array b: ");
+    for(int i=0;i<5;i++){
+        scanf("%f",&numb[i]);
+        sumb+=numb[i];
+    }
+    avg=(suma+sumb)/10;
+    printf("Average value of the arrays: %.2f\n",avg);
+
+    for(int i=0;i<5;i++){
+        if (numa[i]>=avg){
+            numc[cntc]=numa[i];
+            cntc++;
+        }
+    }
+    for(int i=0;i<5;i++){
+        if (numb[i]>=avg){
+            numc[cntc]=numb[i];
+            cntc++;
+        }
+    }
+    printf("Elements of array c: \n");
+    for(int i=0;i<cntc;i++){
+        printf("%.1f ",numc[i]);
+    }
+    
+
+    return 0;
+}
+Enter 10 elements for the array a: 4.1 8.2 7.1 0.2 9.1
+Enter 10 elements for the array b: 5.2 6.1 3.2 1.1 5.56
+Average value of the arrays: 4.99
+Elements of array c: 
+8.2 7.1 9.1 5.2 6.1 5.6 
