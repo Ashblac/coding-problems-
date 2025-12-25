@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include<math.h>
+int find_day(float gold[],float avg);
+int main() {
+    float gold[30];
+    float sum=0.0;
+    float avg=0.0;
+    float diff[30];
+    int i;
+    printf("Enter the last months gold prices: ");
+    for(i=0;i<30;i++){
+        scanf("%f",&gold[i]);
+        sum+=gold[i];
+    }
+    avg=sum/30;
+    
+    int best_day=find_day(gold,avg)+1;
+    printf("The most difference is at day %d.",best_day);
+    return 0;
+}
+int find_day(float gold[],float avg){
+    float maxdiff=fabs(avg - gold[0]);
+    int diff_index = 0;
+    for(int i = 1; i < 30; i++) {
+        float currentDiff = fabs(avg - gold[i]);
+        
+        if(currentDiff > maxdiff) {
+            maxdiff = currentDiff;
+            diff_index = i;
+        }
+    }
+    
+    return diff_index;
+}
+
+Enter the last months gold prices: 4505.40 4502.80 4505.70 4469.40 4387.30 4364.50 4373.90 4332.30 4335.20 4328.30 4313.00 4224.70 4236.20 4217.70 4243.00 4243.00 4232.50 4220.80 4274.80 4254.90 4195.70 4202.30 4180.50 4150.20 4125.60 4110.40 4095.20 4088.90 4072.10 4056.00
+The most difference is at day 3.
