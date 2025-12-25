@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    
+    int num[10];
+    float sum=0.0;
+    float avg=0.0;
+    printf("Enter 10 elements for the array: ");
+    for(int i=0;i<10;i++){
+        scanf("%d",&num[i]);
+        sum+=num[i];
+    }
+    avg=sum/10;
+    printf("Average value of the array: %.2f\n",avg);
+    printf("Elements that have lesser value than average: ");
+    for(int i=0;i<10;i++){
+        if(num[i]<avg){
+            printf("%d ",num[i]);
+        }
+    }
+
+    return 0;
+}
+
+Enter 10 elements for the array: 1 2 3 4 5 6 7 8 9 10
+Average value of the array: 5.50
+Elements that have lesser value than average: 1 2 3 4 5 
