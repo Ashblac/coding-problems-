@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main() {
+float d[12];
+float a[6], b[6];
+int i;
+int agirdi = 0, bgirdi = 0;
+
+printf("Enter the elements of array d:\n");
+for (i = 0; i < 12; i++) {
+scanf("%f", &d[i]);
+}
+
+for (i = 0; i < 12; i++) {
+if (i % 2 == 0) {
+a[agirdi] = d[i];
+agirdi++;
+} else {
+
+b[bgirdi] = d[i];
+bgirdi++;
+}
+}
+printf("\nElements of array a: ");
+for (i = 0; i < 6; i++) {
+printf("%.1f, ", a[i]);
+}
+printf("\n\nElements of array b: ");
+for (i = 0; i < 6; i++) {
+printf("%.1f, ", b[i]);
+}
+
+printf("\n");
+
+
+return 0;
+}
