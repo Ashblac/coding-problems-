@@ -1,0 +1,83 @@
+#include<stdio.h>
+int main(){
+ 
+int vehicle;
+float hour;
+float charge;
+ 
+while(vehicle=1){
+printf("Enter vehicle type: \n");
+scanf("%d", &vehicle);
+ 
+printf("Enter the number of hours: \n");
+scanf("%f", &hour);
+if(vehicle==111){
+break;
+printf("--------------------------\n");
+printf("A total of %d vehicles came to car park!\n");
+printf("Total money earned = %f");
+}
+else if(hour>=0 && hour<=3){
+charge==5.0*0.5;
+}
+else if(hour>=4 && hour<=6){
+charge==7.5*0.5;
+}
+else if(hour>=7 && hour<=10){
+charge==10.0*0.5;
+}
+else if(hour>=11){
+charge==12.5*0.5;
+}
+printf("Charge= %f TL\n", charge);
+}
+ 
+while(vehicle=2){
+printf("Enter vehicle type: \n");
+scanf("%d", &vehicle);
+ 
+printf("Enter the number of hours: \n");
+scanf("%f", &hour);
+if(vehicle==111){
+break;
+}
+else if(hour>=0 && hour<=3){
+charge==5.0*1.0;
+}
+else if(hour>=4 && hour<=6){
+charge==7.5*1.0;
+}
+else if(hour>=7 && hour<=10){
+charge==10.0*1.0;
+}
+else if(hour>=11){
+charge==12.5*1.0;
+}
+printf("Charge= %f TL\n", charge);
+}
+ 
+while(vehicle=3){
+printf("Enter vehicle type: \n");
+scanf("%d", &vehicle);
+ 
+printf("Enter the number of hours: \n");
+scanf("%f", &hour);
+if(vehicle==111){
+break;
+}
+else if(hour>=0 && hour<=3){
+charge==5.0*1.5;
+}
+else if(hour>=4 && hour<=6){
+charge==7.5*1.5;
+}
+else if(hour>=7 && hour<=10){
+charge==10.0*1.5;
+}
+else if(hour>=11){
+charge==12.5*1.5;
+}
+printf("Charge= %f TL\n", charge);
+}
+return 0;
+}
