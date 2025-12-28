@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main (){
+	
+	int value ;
+	
+	printf("Enter the day value (1-7):\n");
+	scanf("%d", &value);
+	
+	printf("---------------------------------\n");
+	
+	switch(value ){
+		case 1:
+			printf("This value corresponds to \“Monday\”.");
+			break;
+		case 2:
+			printf("This value corresponds to \“Tuesday\”.");
+			break;
+		case 3:
+			printf("This value corresponds to \“Wednesday\”.");
+			break;
+		case 4:
+			printf("This value corresponds to \“Thursday\”.");
+			break;
+		case 5:
+			printf("This value corresponds to \“Friday\”.");
+			break;
+		case 6:
+			printf("This value corresponds to \“Saturday\”.");
+			break;
+		case 7:
+			printf("This value corresponds to \“Sunday\".");
+			break;
+		default:
+		printf("Only enter values between (1-7)!");
+		
+	}
+	
+	return 0; 
+}
