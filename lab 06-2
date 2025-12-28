@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main (){
+	
+	int a;
+	int count=1, odd=0;
+	float total=0.0;
+	float avg;
+	
+	printf("Enter the numbers (10 numbers): ");
+	while(count<10){
+		scanf("%d", &a);
+		if(a%2==1){
+			odd++;
+			total= total+a;
+			
+		}
+		
+		count++;
+	}
+	avg = total/odd;
+	
+	printf("\nThe arithmetical average of the %d odd numbers within the entered set = %.1f", odd, avg);
+	return 0;
+	
+	}
+	
+	
