@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main (){
+	
+	int ABC=100, sum;
+	int A;
+	int B;
+	int C;
+	
+        A=ABC/100;
+	    B=(ABC%10)/10;
+	    C=ABC%10;
+	    
+	while(ABC<1000){
+		sum=((A+B+C)*(A+B+C)*(A+B+C));
+		if(sum==ABC){
+		printf("Number = %d, ", ABC);
+		}
+		ABC++;
+	}
+	
+	return 0;
+	
+	}
