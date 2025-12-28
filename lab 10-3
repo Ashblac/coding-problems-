@@ -1,0 +1,29 @@
+#include<stdio.h>
+int howManyExists(int arr1[], int size1, int arr2[], int size2) {
+int count = 0;
+int i, j;
+
+for (i = 0; i < size2; i++) {
+
+for (j = 0; j < size1; j++) {
+if (arr2[i] == arr1[j]) {
+count++;
+break; 
+}
+}
+}
+return count;
+}
+
+int main() {
+int array1[7] = {3, 12, 1, 12, 7, 3, 12};
+int array2[3] = {3, 12, 41};
+int c;
+
+c = howManyExists(array1, 7, array2, 3);
+printf("Result = %d", c);
+
+return 0;
+}
+
+ 
