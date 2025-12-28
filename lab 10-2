@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+ 
+int main(){
+srand(time(NULL));
+ 
+int i;
+int cnt=0;
+printf("Enter the number of elements: ");
+scanf("%d",&i);
+ 
+int array[i];
+int change[i];
+int k;
+for(k=0; k<i;k++){
+array[k]=rand()%100+1;
+change[k]=array[k];
+}
+ 
+printf("Automatically generated array: ");
+for(k=0; k<i;k++){
+printf("%d ,",array[k]);
+}
+ 
+int j;
+int a;
+int temp;
+for(j=0;j<i-1;j++){
+for(a=0;a<i-1-j;a++){
+if(array[a]>array[a+1]){
+temp=array[a];
+array[a]=array[a+1];
+array[a+1]=temp;
+}
+}
+}
+for(k=0; k<i;k++){
+if(array[k]!=change[k]){
+cnt++;
+}
+}
+printf("\nSorted array: ");
+for(k=0; k<i;k++){
+printf("%d, ",change[k]);
+}
+ 
+int same;
+same=i-cnt;
+printf("\nNumber of elements staying in place: %d",same);
+ 
+return 0;
+}
