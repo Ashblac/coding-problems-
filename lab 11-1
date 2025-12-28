@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+ 
+int subset(int array_a[], int n, int array_b[], int m);
+int main(){
+srand(time(NULL));
+int array_a[10];
+int a;
+for(a=0;a<10;a++){
+array_a[a]=rand()%100+1;
+}
+int array_b[5];
+int i;
+printf("Elements of array A: ");
+int j;
+for(j=0;j<10;j++){
+printf("%d ",array_a[j]);
+}
+ 
+printf("\nEnter the elements of array B: ");
+for(i=0;i<5;i++){
+scanf("%d",&array_b[i]);
+}
+ 
+printf("\n---------------------");
+ 
+if (subset(array_a, 10, array_b, 5)){
+ 
+printf("\nArray B is a subset of array A.");
+}else {
+printf("\nArray B is NOT a subset of array A.");
+}
+ 
+return 0;
+}
+int subset(int array_a[], int n, int array_b[], int m){
+int i, j;
+int count=0;
+for(i=0;i<m;i++){
+for(j=0;j<n;j++){
+if(array_b[i]==array_a[j]){
+count++;
+break;
+}
+ 
+}
+}
+printf("%d", count);
+if (count==5){
+  return 1;
+}else {
+return 0;
+}
+}
