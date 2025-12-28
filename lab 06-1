@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main (){
+	
+	int a;
+	int b;
+	int c=0;
+	
+	printf("Enter the first number: \n");
+	scanf("%d",&a);
+	printf("Enter the second number: \n");
+	scanf("%d",&b);
+
+	int i;
+	printf("----------------------------- \n");
+	for(i=a; i<=b; i++){
+		if(i%4==0&&i%7==0){
+		printf("%d,", i);	
+			c++;
+			
+		}
+	
+	}
+	printf("\n%d in total.",c);
+	return 0;
+	
+}
