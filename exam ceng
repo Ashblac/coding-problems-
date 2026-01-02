@@ -1,0 +1,43 @@
+#include<stdio.h>
+
+int main(){
+	int array[25];
+	int n;
+	printf("Enter the number of elements: ");
+	scanf("%d",&n);
+	
+	while(n<1|| n>25){
+		printf("Error(1-25)!");
+		printf("ENTER AGAIN: ");
+		scanf("%d",&n);
+	}
+	
+	printf("enter element %d: \n",n);
+	for(int i=0;i<n;i++){
+		scanf("%d",&array[i]);
+	}
+	
+	int number=1;
+	int max=array[0];
+	
+	for(int i=1;i<n;i++){
+		if(array[i]>max){
+			number++;
+			max=array[i];
+		}
+	}
+	
+	printf("number=%d\n",number);
+	return 0;
+}
+Enter the number of elements: 8
+enter element 8:
+8
+7
+10
+12
+13
+15
+20
+18
+number=6
