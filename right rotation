@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int rotate(int array[],int n, int rotation){
+	rotation = rotation % n;
+	for(int i=0;i<rotation;i++){
+		int last=array[n-1];
+		for(int j=n-1;j>0;j--){
+			array[j]=array[j-1];
+		}
+		array[0]=last;
+	}
+}
+int main(){
+	
+	int array[10]={40,80,32,56,90,12,24,34,64,78};
+	int k = 3;
+	int n=10;
+	
+	rotate(array,n,k);
+	
+	for(int i=0;i<n;i++){
+		printf("%d ",array[i]);
+	}
+	return 0;
+}
+
+34 64 78 40 80 32 56 90 12 24
