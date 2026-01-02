@@ -1,0 +1,41 @@
+#include<stdio.h>
+
+int CountOutOfRange(int data[], int n, int treshold);
+int main(){
+	int data[40];
+	int n,treshold,i;
+	
+	printf("Enter the number of elements (1-40): ");
+	scanf("%d",&n);
+	
+	while(n<1 || n>40){
+		printf("Invalid input! Try again. \n");
+		printf("Enter the number of elements (1-40): ");
+	    scanf("%d",&n);
+	}
+	
+	printf("Enter measurement values: ");
+	for(int i=0;i<n;i++){
+		scanf("%d",&data[i]);
+	}
+	
+	printf("Enter treshold value: ");
+	scanf("%d",&treshold);
+	
+	printf("Measurements greater than treshold value: ");
+	int result= CountOutOfRange(data, n,treshold);
+	printf("%d",result);
+	
+	return 0;
+}
+int CountOutOfRange(int data[], int n, int treshold){
+	int i;
+	int cnt=0;
+	
+	for(int i=0; i<n;i++){
+		if(data[i]>treshold){
+			cnt++;
+		}
+	}
+	return cnt;
+}
